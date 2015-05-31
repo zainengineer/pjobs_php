@@ -77,5 +77,7 @@ while ($SingleRow = $paging->result_assoc()) {
 
 <?php
 $link = $paging->print_link();
-echo "<ul class='paginatoin'>$link</ul>";
+echo "<ul class='pagination'>
+$link
+</ul>";
 include dirname(__FILE__) . "/end.php";

@@ -1,0 +1,2 @@
+News Links: <a href="mms://stream.wmlivesvc.vitalstreamcdn.com/live_stream_geo_tv_GeoAud">Geo Live (Audio)</a> | <a href="http://jang.com.pk/jang/" target="_blank">Jang</a>  | <a target="_blank" href="http://www.bbc.co.uk/urdu/">BBC URDU</a> | <a target="_blank" href="http://news.aaj.tv">Aaj TV</a>
+		</td>

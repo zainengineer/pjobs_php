@@ -1,0 +1,2 @@
+[01-Feb-2008 23:34:52] PHP Warning:  set_time_limit() [<a href='function.set-time-limit'>function.set-time-limit</a>]: Cannot set time limit in safe mode in /home/peshawar/public_html/htmlsqlpjobs/zain3.php on line 2
+[01-Feb-2008 23:40:49] PHP Warning:  set_time_limit() [<a href='function.set-time-limit'>function.set-time-limit</a>]: Cannot set time limit in safe mode in /home/peshawar/public_html/htmlsqlpjobs/zain3.php on line 2

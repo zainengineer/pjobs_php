@@ -19,17 +19,13 @@ $page = $paging->print_info();
 while ($SingleRow = $paging->result_assoc()) {
     //printr($SingleRow,"Single Row");
     ?>
-
-
     <!-- Start of SingleJob  -->
 
     <img src="1pixel.gif" width="1" height="40"/>
 
     <table border="0" width="500">
 
-
         <tr bgcolor="#000000">
-
             <td valign="top" colspan="3" height="19" bgcolor="#FFFFFF">
                 <!-- ID=[<?=$SingleRow["AccessID"]?>] -->
 
@@ -37,13 +33,12 @@ while ($SingleRow = $paging->result_assoc()) {
                 <?= $SingleRow["TitleLink"] ?>
                 <!--AfterTitle <?=$SingleRow["ID"]?> -->
             </td>
-
         </tr>
 
         <tr>
             <td valign="top" height="19" bgcolor="#FFFFFF">
 			<span class="AnnounceDate">
-				Announce: <!--BeforeAnn <?=$SingleRow["ID"]?>--><?=str_replace("Announce:","",$SingleRow["AnnouncedDate"])?><!--AfterAnn <?=$SingleRow["ID"]?> -->
+			    Announce: <!--BeforeAnn <?=$SingleRow["ID"]?>--><?=str_replace("Announce:","",$SingleRow["AnnouncedDate"])?><!--AfterAnn <?=$SingleRow["ID"]?> -->
 			</span>
             </td>
 
@@ -64,22 +59,16 @@ while ($SingleRow = $paging->result_assoc()) {
         <tr>
             <td valign="top" height="19" colspan="3" bgcolor="#FFFFFF">
 			<span class="JobDetails">
-
 				<!--ContentStart--><?=$SingleRow["Content"]?><!--EndOfContent-->
 			</span>
             </td>
         </tr>
 
-
-        <!--BeforeAddStart-->
-
-
-        <!--AfterAddEnd-->
+        <!--BeforeAddStart--><!--AfterAddEnd-->
 
     </table>
 
     <!-- End  of Single Job  -->
-
 <?php
 }
 ?>

@@ -6,7 +6,7 @@ include "start.php";
     <h1><?= $JobTitle ?></h1>
     <div class="row">
         <div class="col-xs-3">
-            <a href="#" onClick="javascript:history.back();" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span> Go Back</a>
+            <a href="javascript:history.back();" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span> Go Back</a>
 
                 <!-- AddThis Button BEGIN -->
                 <script type="text/javascript">var addthis_pub = "zainengineer";</script>
@@ -77,7 +77,7 @@ include "start.php";
     </div>
     <div class="row">
         <div class="col-xs-3">
-            <a href="#" onClick="javascript:history.back();" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span> Go Back</a>
+            <a href="javascript:history.back();" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span> Go Back</a>
 
             <!-- AddThis Button BEGIN -->
             <script type="text/javascript">var addthis_pub="zainengineer";</script>
@@ -101,7 +101,7 @@ include "start.php";
             <script type="text/javascript"
                     src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
             </script>
-            
+
         </div>
     </div>
 

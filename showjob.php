@@ -49,6 +49,10 @@ google_ad_channel = "8346575197";
 		$filename=$_GET['imagefile'];
 		$filename="jobimg/$filename";
 		$FileExists=file_exists($filename);
+        if (!$FileExists){
+            $filename = 'job_archive_img/' . $_GET['imagefile'];
+            $FileExists = file_exists($filename);
+        }
 		$DescriptiveAdd = ( strpos($JobContent , $_GET['imagefile']) === false);
 		if ($JobContent==""){
 			$DescriptiveAdd=false;
@@ -60,8 +64,7 @@ google_ad_channel = "8346575197";
 		
 		
 ?><p align="center">
-	<img border="3"  alt="Loading Job Scan ...." style="border-color: blue" src="jobimg/<?php
-	echo $_GET['imagefile']; ?>?3">
+	<img border="3"  alt="Loading Job Scan ...." style="border-color: blue" src="<?php echo $filename; ?>?3">
 	</p>
  <?php 		
 		}else{ //File Does not Exist

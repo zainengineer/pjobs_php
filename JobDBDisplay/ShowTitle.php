@@ -1,7 +1,6 @@
 <?php
 require_once dirname(__FILE__)."/../modules/zincludethis.php";
 
-
 //echo "<br />  $mainQuery <br />";
 if (isset($_GET["imagefile"])){
 	$imagefile=	$_GET["imagefile"];
@@ -18,4 +17,3 @@ if (isset($_GET["imagefile"])){
 }else{
 	$JobTitle="";
 }
-?>

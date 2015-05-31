@@ -21,13 +21,13 @@ while ($SingleRow = $paging->result_assoc()) {
     ?>
     <!-- Start of SingleJob  -->
 
-    <div class="row">
+    <div class="row top-buffer">
         <div class="col-xs-9">
             <!-- ID=[<?=$SingleRow["AccessID"]?>] --> <!--BeforeTitle <?=$SingleRow["ID"]?>  -->
             <?= $SingleRow["TitleLink"] ?><!--AfterTitle <?=$SingleRow["ID"]?> -->
         </div>
     </div>
-    <div class="row">
+    <div class="row row-dates">
         <div class="col-xs-3 AnnounceDate">
             Announce: <!--BeforeAnn <?=$SingleRow["ID"]?>-->
             <?=str_replace("Announce:","",$SingleRow["AnnouncedDate"])?><!--AfterAnn <?=$SingleRow["ID"]?> -->

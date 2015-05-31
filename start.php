@@ -1,4 +1,4 @@
-2<?php
+<?php
 //date_default_timezone_set("Asia/Karachi");
 
 if (!isset($linklevel)) {
@@ -38,42 +38,48 @@ if (!isset($ThisPageTitle)) {
 
     ?>
     <link href="<?= $linklevel ?>css/pjobscss.css?1" rel="stylesheet" type="text/css"/>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.4/superhero/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Paytone+One' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body bgcolor="#FFFFFF">
-<table align="center" border="0">
-    <tr>
-        <td align="center">
-            <img src="<?= $linklevel ?>ztop.jpg?1" align="center"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="<?= $linklevel ?>.">Peshawar Jobs</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <?php
+                $aLinks = array(
+                    "." => "Home",
+                    "recentjobs.php" => "Recent Jobs",
+                    "JobDBDisplayArchieve.php" => "Old Jobs",
+//                    "community.php" => "Community",
+                    "webhosting.php" => "Web Hosting",
+                    "nimaz.php" => "Nimaz Timings",
+                    "sitemap.php" => "Site Map",
+                    "links.php" => "Links",
+                    "contactus.php" => "Contact us",
+                );
+                foreach ($aLinks as $vHref => $vLabel) {
+                    $vHref = $linklevel . $vHref;
+                    $vLink = "<li><a href='$vHref'>$vLabel</a></li>\n";
+                    echo $vLink;
+                }
+                ?>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-            <font style="font-size: 14pt; font-family: Arial">
+<div class="container">
 
-                <a href="<?= $linklevel ?>.">Home</a>&nbsp; -
-                <a href="<?= $linklevel ?>Advertise-Jobs.php">Advertise Jobs</a>&nbsp; -
-                <a href="<?= $linklevel ?>recentjobs.php">Recent Jobs</a>&nbsp; -
-                <a href="<?= $linklevel ?>JobDBDisplayArchieve.php">Old Jobs</a>&nbsp; -
-                <!--<a  href="<?=$linklevel?>forum/">Forum</a>&nbsp; - -->
-                <a href="<?= $linklevel ?>community.php">Community</a>&nbsp;
-                <a href="<?= $linklevel ?>webhosting.php">Web Hosting </a>&nbsp;-
-                <a href="<?= $linklevel ?>nimaz.php">Nimaz Timings</a>&nbsp;-&nbsp;
-                <a href="<?= $linklevel ?>sitemap.php">Site Map</a> -
-                <a href="<?= $linklevel ?>links.php">Links</a> -
-                <a href="<?= $linklevel ?>contactus.php">Contact us</a>
-        </td>
-    </tr>
-    
-    <tr>
-        <td align="center">
-            <br/>
-            <?php
-            //include "newslinks.php";
-            ?>
-        </td>
-    </tr>
-</table>
-<br/><br/>
+    <div class="row">
+        <div class="page-header">
+            <h1>Peshawar Jobs <small>Jobs in Pakistan specially in Khyber Pakhtunkhwa</small></h1>
+            <?php include dirname(__FILE__) . "/JobSearchCode.php"; ?>
+        </div>
+    </div>

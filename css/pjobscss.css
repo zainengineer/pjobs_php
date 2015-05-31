@@ -1,0 +1,16 @@
+a.TitleLink:hover{	
+	color:#0000FF;
+}
+a.TitleLink:visited{	
+	color:#0000FF; 	
+}
+.TitleLink{
+	font-family:verdana,arial,sans-sarif ;font-size:13px;font-weight:bold;line-height:16px;color:#0000FF;
+}
+
+.AnnounceDate,.StartDate,.EndDate,.JobDetails{
+	color:#000000;display:block;font-size:13px;line-height:16px
+}
+a.JobDetails{
+	color:#009900;font-size:10px;line-height:13px;overflow:hidden;white-space:nowrap
+}

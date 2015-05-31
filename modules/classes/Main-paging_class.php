@@ -115,6 +115,14 @@ class paging
 		return $page;
 	}
 
+    /**
+     * custom function added by zain
+     */
+    function link_template($vHref, $vTitle)
+    {
+        return "<a href='$vHref'>". $vTitle ."</a>\n";
+    }
+
 	function print_link($InternalVar="")
 	{
 		
@@ -126,10 +134,9 @@ class paging
 
 			// print prev
 			if ($this->page>1){
-			$print_link .= "<a href=\"".$_SERVER["PHP_SELF"]."?$InternalVar&".$_SERVER["QUERY_STRING"]."&page=".($this->page-1)."\">".$this->prev."</a>\n";
-			
-			
-}
+			$print_link .= $this->link_template($_SERVER["PHP_SELF"]."?$InternalVar&".$_SERVER["QUERY_STRING"]."&page=".($this->page-1),
+                $this->prev);
+
 			// set number
 			$this->p["bawah"]=$this->page-$this->p["langkah"];
 				if ($this->p["bawah"]<1) $this->p["bawah"]=1;
@@ -141,6 +148,8 @@ class paging
 			if ($this->page<>1)
 			{
 				for ($i=$this->p["bawah"];$i<=$this->page-1;$i++)
+//					$print_link .=$this->link_template($_SERVER["PHP_SELF"]."?".$_SERVER["QUERY_STRING"]."&page=$i" ,
+//					numberK($i,$this->number));
 					$print_link .="<a href=\"".$_SERVER["PHP_SELF"]."?".$_SERVER["QUERY_STRING"]."&page=$i\">".numberK($i,$this->number)."</a>\n";
 			//echo "<br />  and internal var is  [$InternalVar] <br />";
 			}
@@ -154,26 +163,31 @@ class paging
 			//echo "<br /> this->page=$this->page, this->number=$this->number <br />";
 			$PageK=$this->page;
 			$PageNumberK=$this->number;
-			$PrintLinkK=numberK($PageK,$PageNumberK);
+			$PrintLinkK=$this->numberK($PageK,$PageNumberK);
 				$print_link .= "<b>".$PrintLinkK."</b>\n";
 				
 
 			// print end
 			$_SERVER["QUERY_STRING"].="&$InternalVar";
 			for ($i=$this->page+1;$i<=$this->p["atas"];$i++)
-			$print_link .= "<a href=\"".$_SERVER["PHP_SELF"]."?".$_SERVER["QUERY_STRING"]."&page=$i\">".numberK($i,$this->number)."</a>\n";
+			$print_link .= $this->link_template($_SERVER["PHP_SELF"]."?".$_SERVER["QUERY_STRING"]."&page=$i",
+			    $this->numberK($i,$this->number));
+//                "<a href=\"".$_SERVER["PHP_SELF"]."?".$_SERVER["QUERY_STRING"]."&page=$i\">".$this->numberK($i,$this->number)."</a>\n";
 //echo "<br />  parent links are [$print_link] <br />";
 //exit;
 			// print next
 			if ($this->page<$this->p["total_page"])
-			$print_link .= "<a href=\"".$_SERVER["PHP_SELF"]."?".$_SERVER["QUERY_STRING"]."&page=".($this->page+1)."\">".$this->next."</a>\n";
+			$print_link .= $this->link_template($_SERVER["PHP_SELF"]."?".$_SERVER["QUERY_STRING"]."&page=".($this->page+1),
+			    $this->next);
+//			$print_link .= "<a href=\"".$_SERVER["PHP_SELF"]."?".$_SERVER["QUERY_STRING"]."&page=".($this->page+1)."\">".$this->next."</a>\n";
 
 			return $print_link;
 		}
 	}
 }
-function numberK($i,$number)
-		{
-			return ereg_replace("^(.*)%%number%%(.*)$","\\1$i\\2",$number);
-		}
-?>
+
+    function numberK($i, $number)
+    {
+        return ereg_replace("^(.*)%%number%%(.*)$", "\\1$i\\2", $number);
+    }
+}
